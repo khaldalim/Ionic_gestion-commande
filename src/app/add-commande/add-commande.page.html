@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ajouter commande</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <form a (ngSubmit)="ajouterCommande()" >
+      <ion-item lines="full">
+        <ion-label position="floating">Numéro de commande :</ion-label>
+        <ion-input type="text" [(ngModel)]="commande.id"  name="numCommande" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">id client : </ion-label>
+        <ion-input type="text" [(ngModel)]="commande.client" name="name" required></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">libelle : </ion-label>
+        <ion-textarea type="text" name="libelle" [(ngModel)]="commande.libelle" required></ion-textarea>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="danger" expand="block">Ajouter</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-content>
+</ion-content>
