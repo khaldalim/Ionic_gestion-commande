@@ -31,6 +31,18 @@ const routes: Routes = [
     path: 'list-commandes',
     loadChildren: () => import('./list-commandes/list-commandes.module').then( m => m.ListCommandesPageModule)
   },
+  {
+    path: 'list-users',
+    loadChildren: () => import('./list-users/list-users.module').then( m => m.ListUsersPageModule)
+  },
+  {
+    path: 'voir-user',
+    loadChildren: () => import('./voir-user/voir-user.module').then( m => m.VoirUserPageModule)
+  },
+  {
+    path: 'add-user',
+    loadChildren: () => import('./add-user/add-user.module').then( m => m.AddUserPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {CommandeStorageService} from '../services/commande-storage.service';
+import {Commande} from '../modeles/commande';
 
 @Component({
   selector: 'app-voir-commande',
@@ -8,11 +10,19 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class VoirCommandePage implements OnInit {
 
-  id: string;
-  constructor(private activateRoute: ActivatedRoute) { }
+
+  commande: Commande;
+
+  constructor(private activateRoute: ActivatedRoute, private cmStorage: CommandeStorageService) {
+  }
 
   ngOnInit() {
-    this.id = this.activateRoute.snapshot.paramMap.get('id');
+    this.commande = new Commande();
+    this.cmStorage.selectOne(this.activateRoute.snapshot.params.id).then((data) => {
+      this.commande.id = data.id;
+      this.commande.client = data.client;
+      this.commande.libelle = data.libelle;
+    });
   }
 
 }

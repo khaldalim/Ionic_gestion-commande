@@ -15,6 +15,12 @@ export class CommandeStorageService {
     console.log('commande ajouté avec succes');
   }
 
+
+
+  public selectOne(id: string){
+    return this.bdd.get(id); // promise
+  }
+
   findAll() {
     let commandes = [];
     commandes = [];
@@ -23,4 +29,6 @@ export class CommandeStorageService {
     });
     return commandes;
   }
+
+
 }
