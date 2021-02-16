@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>list-users</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>liste des utilisateurs</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
 
+       <ion-item *ngFor="let user of users" (click)="afficherUser(Number(user.id))">
+      <ion-label>
+        <h4>ID : {{user.id}}</h4>
+        <h4>nom :{{user.nom}}</h4>
+        <h4>prenom :{{user.prenom}}</h4>
+        <h4>email :{{user.email}}</h4>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
 </ion-content>

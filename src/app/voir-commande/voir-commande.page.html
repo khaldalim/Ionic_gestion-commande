@@ -3,12 +3,16 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Commande N° </ion-title>
+    <ion-title>Commande N°</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-            <ion-label>
-        {{commande.id}}
-      </ion-label>
+  <ion-label>
+    <ul>
+      <li> ID :{{commande.id}}</li>
+      <li> client :{{commande.client}}</li>
+      <li> libelle :{{commande.libelle}}</li>
+    </ul>
+  </ion-label>
 </ion-content>

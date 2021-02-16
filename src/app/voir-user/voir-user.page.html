@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>voir-user</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>user N°{{user.id}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-label>
+    <ul>
+      <li> ID :{{user.id}}</li>
+      <li> Nom :{{user.nom}}</li>
+      <li> Prenom :{{user.prenom}}</li>
+      <li> Email :{{user.email}}</li>
+      <ion-button lines="full" (click)="this.updateForm(user)">Modifier</ion-button>
+      <ion-button lines="full" color="danger" (click)="this.userService.delete(user.id)"
+                  routerLink="/list-users" >Supprimer</ion-button>
+    </ul>
 
+  </ion-label>
 </ion-content>

@@ -1,5 +1,6 @@
 export class User {
-  public id: number = null;
+  public id: string = null;
   public nom: string = null;
   public prenom: string = null;
+  public email: string = null;
 }

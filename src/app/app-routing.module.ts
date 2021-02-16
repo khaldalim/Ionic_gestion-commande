@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./add-commande/add-commande.module').then( m => m.AddCommandePageModule)
   },
   {
-    path: 'historique-commande',
-    loadChildren: () => import('./historique-commande/historique-commande.module').then( m => m.HistoriqueCommandePageModule)
-  },
-  {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
   },
@@ -36,13 +32,17 @@ const routes: Routes = [
     loadChildren: () => import('./list-users/list-users.module').then( m => m.ListUsersPageModule)
   },
   {
-    path: 'voir-user',
+    path: 'voir-user/:id',
     loadChildren: () => import('./voir-user/voir-user.module').then( m => m.VoirUserPageModule)
   },
   {
     path: 'add-user',
     loadChildren: () => import('./add-user/add-user.module').then( m => m.AddUserPageModule)
   },
+  {
+    path: 'update-user/:id',
+    loadChildren: () => import('./add-user/add-user.module').then( m => m.AddUserPageModule)
+  }
 ];
 
 @NgModule({
